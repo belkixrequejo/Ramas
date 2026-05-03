@@ -1,3 +1,129 @@
-body { font-family: sans-serif; background-color: #f4f4f4; color: #333; padding: 20px; }
-.comando { background: white; padding: 15px; margin-bottom: 10px; border-left: 5px solid #2ecc71; border-radius: 4px; }
-h1 { color: #2c3e50; }
+:root {
+    --primary: #64ffda; /* Color turquesa Git */
+    --bg-dark: #0a192f;
+    --card-bg: #112240;
+    --text-main: #ccd6f6;
+    --text-dim: #8892b0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body { 
+    font-family: 'Poppins', sans-serif; 
+    background-color: var(--bg-dark); 
+    color: var(--text-main); 
+    padding: 40px 20px;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.logo {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    background: var(--primary);
+    color: var(--bg-dark);
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+
+h1 { 
+    font-size: 2.5rem;
+    color: white; 
+    margin-bottom: 10px;
+}
+
+header p {
+    color: var(--text-dim);
+    font-weight: 300;
+}
+
+#contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.comando { 
+    background: var(--card-bg); 
+    padding: 30px; 
+    border-radius: 12px; 
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.comando:hover {
+    transform: translateY(-10px);
+    border-bottom: 3px solid var(--primary);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.code-icon {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+h2 { 
+    color: var(--primary); 
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+p {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+}
+/* --- DISEÑO RESPONSIVE --- */
+
+/* Ajustes para tablets y celulares (pantallas menores a 768px) */
+@media (max-width: 768px) {
+    body {
+        padding: 30px 15px; /* Reducimos el espacio lateral */
+    }
+
+    h1 {
+        font-size: 2rem; /* Título un poco más pequeño */
+    }
+
+    #contenedor {
+        grid-template-columns: 1fr; /* Una sola columna para evitar que se amontonen */
+        gap: 15px;
+    }
+
+    .comando {
+        padding: 20px; /* Tarjetas más compactas */
+    }
+}
+
+/* Ajustes extra para celulares pequeños (menores a 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+}
